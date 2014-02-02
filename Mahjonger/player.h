@@ -12,9 +12,9 @@
 #include "tile.h"
 #include <vector>
 
-class player {
-    player();
-    ~player();
+class Player {
+    Player();
+    ~Player();
     int getScore();
     std::vector<Tile> getHand();
 public:
