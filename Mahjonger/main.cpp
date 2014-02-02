@@ -7,16 +7,25 @@
 //
 
 #include "windowManager.h"
+#include "tile.h"
 
 //basically copypasted glfw example, only adding a clClear call and vsync
 
 int main(int argc, const char* argv[])
 {
-    auto window = WindowManager::get().getWindow();
     
     /* Initialize the library */
     if (!glfwInit())
         return -1;
+    
+    GLFWwindow* window;
+    window = glfwCreateWindow(800, 600, "Mahjonger", NULL, NULL);
+    
+    if (!window){
+        glfwTerminate();
+        return -1;
+    }
+    
     
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
@@ -25,15 +34,31 @@ int main(int argc, const char* argv[])
     
     glClearColor(0, 0, 0, 1);
     
+    Tile tile(2);
+    
+    glScalef(0.1,0.1,0.1);
+    glRotatef(70, 1, 0, 0);
+    
+    int time=0;
+    
+    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+    
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
+        glPushMatrix();
+        glRotatef(time,0,0,1);
+            tile.render();
+        glPopMatrix();
+        
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
         glClear(GL_COLOR_BUFFER_BIT);
         
         /* Poll for and process events */
         glfwPollEvents();
+        
+        ++time;
     }
     
     glfwTerminate();
