@@ -6,6 +6,11 @@
 //  Copyright (c) 2014 Hakurou46. All rights reserved.
 //
 
+/////////////////
+// DEPRECATED HEADER
+/////////////////
+
+/*
 #ifndef __Mahjonger__windowManager__
 #define __Mahjonger__windowManager__
 
@@ -21,5 +26,6 @@ private:
     WindowManager operator= (const WindowManager&);
     GLFWwindow* window;
 };
+ 
 
-#endif /* defined(__Mahjonger__windowManager__) */
+#endif  defined(__Mahjonger__windowManager__) */

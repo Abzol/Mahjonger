@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Hakurou46. All rights reserved.
 //
 
-#include "windowManager.h"
+/*#include "windowManager.h"
 
 WindowManager& WindowManager::get(){
     static WindowManager winman;
@@ -27,4 +27,4 @@ WindowManager::WindowManager(){
         glfwTerminate();
     }
     window = winptr;
-}
+}*/

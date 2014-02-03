@@ -25,7 +25,7 @@ private:
     Wall(){};
     Wall(const Wall&);
     Wall operator= (const Wall&);
-    std::vector<Tile> wall;
-    std::vector<Tile> dead;
+    std::vector<Tile> _wall;
+    std::vector<Tile> _dead;
 };
 #endif /* defined(__Mahjonger__wall__) */

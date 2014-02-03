@@ -14,10 +14,10 @@ Wall& Wall::get(){
 }
 
 void Wall::setup(bool redfives){
-    wall.clear();
-    dead.clear();
+    _wall.clear();
+    _dead.clear();
     
     for (int i = 0; i<136; ++i){
-        wall.push_back(Tile(0.25*i));
+        //_wall.push_back(Tile(0.25*i));
     }
 }

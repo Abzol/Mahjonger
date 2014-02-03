@@ -13,13 +13,14 @@
 
 class Tile {
 public:
-    Tile(int type);
+    Tile(int type, GLuint* texture);
     void render();
     void flip();
     
 private:
-    int type;
-    bool visible;
+    int _type;
+    bool _visible;
+    GLuint* _texture;
 };
 
 #endif /* defined(__Mahjonger__tile__) */

@@ -18,8 +18,8 @@ class Player {
     int getScore();
     std::vector<Tile> getHand();
 public:
-    int score;
-    std::vector<Tile> hand;
+    int _score;
+    std::vector<Tile> _hand;
 };
 
 #endif /* defined(__Mahjonger__player__) */
