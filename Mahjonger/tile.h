@@ -13,14 +13,21 @@
 
 class Tile {
 public:
-    Tile(int type, GLuint* texture);
+    Tile(int type);
     void render();
     void flip();
     
 private:
     int _type;
     bool _visible;
-    GLuint* _texture;
 };
+
+static const GLfloat vertices[] =
+    {1,1,0, 1,0,0,
+    0,1,0, 0,0,0,
+    0,0,1, 1,0,1,
+    1,1,1, 0,1,1};
+
+static const GLubyte indices[] = {0,1,2,3,4,1,5,6,4,7,2,6,0,1};
 
 #endif /* defined(__Mahjonger__tile__) */

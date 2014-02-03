@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Hakurou46. All rights reserved.
 //
 
-#include "windowManager.h"
 #include "tile.h"
 #include "libpngHook.h"
+#include "VBO.h"
 
 //basically copypasted glfw example, only adding a clClear call and vsync
 
@@ -26,17 +26,6 @@ int main(int argc, const char* argv[])
         glfwTerminate();
         return -1;
     }
-    
-    int height, width;
-    int* hw = &height;
-    int* ww = &width;
-    
-    GLuint* east = new GLuint (png_texture_load("/Users/Wolfie/Desktop/tile.png", ww, hw));
-    GLuint* east_s = new GLuint (png_texture_load("/Users/Wolfie/Desktop/tile.png", ww, hw));
-    
-    
-    //glEnable(GL_TEXTURE_2D);
-    
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
     
@@ -44,15 +33,42 @@ int main(int argc, const char* argv[])
     
     glClearColor(0, 0, 0, 1);
     
-    //glClientActiveTexture(*east);
-    //glBindTexture(GL_TEXTURE_2D, *east);
-    
-    Tile tile(2, east);
+    Tile tile(2);
     
     glScalef(0.5,0.5,0.5);
     glRotatef(70, 1, 0, 0);
     
     int time=0;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    int width, height;
+    int* ww = &width;
+    int* hw = &height;
+    
+    GLuint vbuffer= makeBuffer(GL_ARRAY_BUFFER, vertices, sizeof(vertices));
+    GLuint ibuffer= makeBuffer(GL_ARRAY_BUFFER, indices, sizeof(indices));
+    GLuint texture= png_texture_load("/Users/Wolfie/Desktop/tile2.png", ww, hw);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE);
+
+    
+    
+    
+    
+    
+    
+    
     
     
     glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
@@ -62,12 +78,7 @@ int main(int argc, const char* argv[])
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
-        glPushMatrix();
-        //glBindTexture(GL_TEXTURE_2D, *east);
-        glRotatef(time,0,0,1);
-        glTranslatef(-0.5,-0.5,0);
-            tile.render();
-        glPopMatrix();
+        tile.render();
         
         /* Swap front and back buffers */
         glfwSwapBuffers(window);

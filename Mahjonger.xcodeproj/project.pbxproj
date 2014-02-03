@@ -20,6 +20,7 @@
 		F15B05B9189DE18400C3509D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15B05B8189DE18400C3509D /* OpenGL.framework */; };
 		F15B05BB189DE18700C3509D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15B05BA189DE18700C3509D /* Cocoa.framework */; };
 		F15B05BD189DE18C00C3509D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15B05BC189DE18C00C3509D /* IOKit.framework */; };
+		F1A6AE8F18A019C60063C4BC /* VBO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1A6AE8D18A019C60063C4BC /* VBO.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +57,10 @@
 		F15B05B8189DE18400C3509D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		F15B05BA189DE18700C3509D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F15B05BC189DE18C00C3509D /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		F1A6AE8D18A019C60063C4BC /* VBO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VBO.cpp; sourceTree = "<group>"; };
+		F1A6AE8E18A019C60063C4BC /* VBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBO.h; sourceTree = "<group>"; };
+		F1A6AE9018A030F00063C4BC /* vertex.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.v.glsl; sourceTree = "<group>"; };
+		F1A6AE9118A033550063C4BC /* fragment.f.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.f.glsl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +83,12 @@
 		F15265DE189E8B2800784A95 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F1A6AE9118A033550063C4BC /* fragment.f.glsl */,
 				F12445DE189F125000BF68A3 /* libpngHook.cpp */,
-				F15265DB189E8B2000784A95 /* tile.cpp */,
 				F15265E3189E9DC200784A95 /* player.cpp */,
+				F15265DB189E8B2000784A95 /* tile.cpp */,
+				F1A6AE9018A030F00063C4BC /* vertex.v.glsl */,
+				F1A6AE8D18A019C60063C4BC /* VBO.cpp */,
 				F15265E6189E9FD900784A95 /* wall.cpp */,
 				F15265E0189E8C0400784A95 /* windowManager.cpp */,
 			);
@@ -91,8 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				F12445DF189F125000BF68A3 /* libpngHook.h */,
-				F15265DC189E8B2000784A95 /* tile.h */,
 				F15265E4189E9DC200784A95 /* player.h */,
+				F15265DC189E8B2000784A95 /* tile.h */,
+				F1A6AE8E18A019C60063C4BC /* VBO.h */,
 				F15265E7189E9FD900784A95 /* wall.h */,
 				F15265E1189E8C0400784A95 /* windowManager.h */,
 			);
@@ -186,6 +195,7 @@
 			files = (
 				F15265E5189E9DC200784A95 /* player.cpp in Sources */,
 				F15265E2189E8C0400784A95 /* windowManager.cpp in Sources */,
+				F1A6AE8F18A019C60063C4BC /* VBO.cpp in Sources */,
 				F15B05AE189DE02200C3509D /* main.cpp in Sources */,
 				F15265E8189E9FD900784A95 /* wall.cpp in Sources */,
 				F12445E0189F125000BF68A3 /* libpngHook.cpp in Sources */,
@@ -232,6 +242,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"/usr/local/include/GLFW/**",
 					"/usr/local/Cellar/libpng/1.5.14/include/**",
+					"/usr/local/Cellar/glew/1.10.0/**",
 				);
 				LIBRARY_SEARCH_PATHS = "/usr/local/lib/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -271,6 +282,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"/usr/local/include/GLFW/**",
 					"/usr/local/Cellar/libpng/1.5.14/include/**",
+					"/usr/local/Cellar/glew/1.10.0/**",
 				);
 				LIBRARY_SEARCH_PATHS = "/usr/local/lib/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
