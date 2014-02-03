@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F12445E0189F125000BF68A3 /* libpngHook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F12445DE189F125000BF68A3 /* libpngHook.cpp */; };
+		F12445E2189F126D00BF68A3 /* libpng15.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F12445E1189F126D00BF68A3 /* libpng15.a */; };
 		F15265D9189E682F00784A95 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15265D8189E682F00784A95 /* QuartzCore.framework */; };
 		F15265DD189E8B2000784A95 /* tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15265DB189E8B2000784A95 /* tile.cpp */; };
 		F15265E2189E8C0400784A95 /* windowManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15265E0189E8C0400784A95 /* windowManager.cpp */; };
@@ -34,6 +36,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F12445DE189F125000BF68A3 /* libpngHook.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libpngHook.cpp; sourceTree = "<group>"; };
+		F12445DF189F125000BF68A3 /* libpngHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libpngHook.h; sourceTree = "<group>"; };
+		F12445E1189F126D00BF68A3 /* libpng15.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng15.a; path = ../../../../../../usr/local/Cellar/libpng/1.5.14/lib/libpng15.a; sourceTree = "<group>"; };
 		F15265D8189E682F00784A95 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F15265DA189E81D300784A95 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		F15265DB189E8B2000784A95 /* tile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tile.cpp; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F12445E2189F126D00BF68A3 /* libpng15.a in Frameworks */,
 				F15265D9189E682F00784A95 /* QuartzCore.framework in Frameworks */,
 				F15B05BD189DE18C00C3509D /* IOKit.framework in Frameworks */,
 				F15B05BB189DE18700C3509D /* Cocoa.framework in Frameworks */,
@@ -72,6 +78,7 @@
 		F15265DE189E8B2800784A95 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F12445DE189F125000BF68A3 /* libpngHook.cpp */,
 				F15265DB189E8B2000784A95 /* tile.cpp */,
 				F15265E3189E9DC200784A95 /* player.cpp */,
 				F15265E6189E9FD900784A95 /* wall.cpp */,
@@ -83,6 +90,7 @@
 		F15265DF189E8B2E00784A95 /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				F12445DF189F125000BF68A3 /* libpngHook.h */,
 				F15265DC189E8B2000784A95 /* tile.h */,
 				F15265E4189E9DC200784A95 /* player.h */,
 				F15265E7189E9FD900784A95 /* wall.h */,
@@ -94,6 +102,7 @@
 		F15B05A1189DE02200C3509D = {
 			isa = PBXGroup;
 			children = (
+				F12445E1189F126D00BF68A3 /* libpng15.a */,
 				F15265D8189E682F00784A95 /* QuartzCore.framework */,
 				F15B05BC189DE18C00C3509D /* IOKit.framework */,
 				F15B05BA189DE18700C3509D /* Cocoa.framework */,
@@ -179,6 +188,7 @@
 				F15265E2189E8C0400784A95 /* windowManager.cpp in Sources */,
 				F15B05AE189DE02200C3509D /* main.cpp in Sources */,
 				F15265E8189E9FD900784A95 /* wall.cpp in Sources */,
+				F12445E0189F125000BF68A3 /* libpngHook.cpp in Sources */,
 				F15265DD189E8B2000784A95 /* tile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +231,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"/usr/local/include/GLFW/**",
+					"/usr/local/Cellar/libpng/1.5.14/include/**",
 				);
 				LIBRARY_SEARCH_PATHS = "/usr/local/lib/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -259,6 +270,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"/usr/local/include/GLFW/**",
+					"/usr/local/Cellar/libpng/1.5.14/include/**",
 				);
 				LIBRARY_SEARCH_PATHS = "/usr/local/lib/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -269,6 +281,10 @@
 		F15B05B4189DE02200C3509D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/libpng/1.5.14/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -276,6 +292,10 @@
 		F15B05B5189DE02200C3509D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/libpng/1.5.14/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -36,18 +36,20 @@ int main(int argc, const char* argv[])
     
     Tile tile(2);
     
-    glScalef(0.1,0.1,0.1);
+    
+    glScalef(0.5,0.5,0.5);
     glRotatef(70, 1, 0, 0);
     
     int time=0;
     
-    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+    glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
     
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
         glPushMatrix();
         glRotatef(time,0,0,1);
+        glTranslatef(-0.5,-0.5,0);
             tile.render();
         glPopMatrix();
         
