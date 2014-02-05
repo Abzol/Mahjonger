@@ -11,10 +11,18 @@
 
 #include <glfw3.h>
 
+struct gprog{
+    GLuint vbuffer, ibuffer, texture, vshader, fshader, program;
+    struct {
+        GLint fadefactor, textures[2], position;
+    }uniforms;
+    GLfloat fadefactor;
+};
+
 class Tile {
 public:
     Tile(int type);
-    void render();
+    void render(gprog pkg);
     void flip();
     
 private:

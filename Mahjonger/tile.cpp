@@ -18,11 +18,27 @@ void Tile::flip(){
     _visible=!_visible;
 }
 
-void Tile::render(){
+void Tile::render(gprog pkg){
 
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glVertexPointer(3, GL_FLOAT, 0, vertices);
-    glDrawElements(GL_TRIANGLE_STRIP, 14, GL_UNSIGNED_BYTE, indices);
+    glUseProgram(pkg.program);
+    glUniform1f(pkg.uniforms.fadefactor, pkg.fadefactor);
     
-    glDisableClientState(GL_VERTEX_ARRAY);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, pkg.uniforms.textures[0]);
+    glUniform1i(pkg.uniforms.textures[0], 0);
+    
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, pkg.uniforms.textures[1]);
+    glUniform1i(pkg.uniforms.textures[1], 1);
+    
+    
+    glBindBuffer(GL_ARRAY_BUFFER, pkg.vbuffer);
+    glVertexAttribPointer(pkg.uniforms.position, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*2, (void*)0);
+    glEnableVertexAttribArray(pkg.uniforms.position);
+ 
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, pkg.ibuffer);
+    glDrawElements(GL_TRIANGLE_STRIP, 4, GL_UNSIGNED_SHORT, (void*)0);
+    
+    glDisableVertexAttribArray(pkg.uniforms.position);
+
 }

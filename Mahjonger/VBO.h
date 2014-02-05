@@ -9,9 +9,15 @@
 #ifndef __Mahjonger__whatsUpFuckers__
 #define __Mahjonger__whatsUpFuckers__
 
+#define GLEW_STATIC 1
+#include <glew.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include <glfw3.h>
 
-static GLuint makeBuffer(GLenum target, const void *buffer_data, GLsizei buffer_size);
-static GLuint make_shader(GLenum type, const char *filename);
+GLuint makeBuffer(GLenum target, const void *buffer_data, GLsizei buffer_size);
+GLuint make_shader(GLenum type, const char *filename);
+void show_info_log(GLuint object, PFNGLGETSHADERIVPROC glGet__iv,PFNGLGETSHADERINFOLOGPROC glGet__InfoLog);
+GLuint make_program(GLuint vertex_shader, GLuint fragment_shader);
 
 #endif /* defined(__Mahjonger__whatsUpFuckers__) */

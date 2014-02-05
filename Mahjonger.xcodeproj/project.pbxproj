@@ -21,6 +21,7 @@
 		F15B05BB189DE18700C3509D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15B05BA189DE18700C3509D /* Cocoa.framework */; };
 		F15B05BD189DE18C00C3509D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15B05BC189DE18C00C3509D /* IOKit.framework */; };
 		F1A6AE8F18A019C60063C4BC /* VBO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1A6AE8D18A019C60063C4BC /* VBO.cpp */; };
+		F1EBA4D718A269CE006104B0 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EBA4D618A269CE006104B0 /* libGLEW.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +62,7 @@
 		F1A6AE8E18A019C60063C4BC /* VBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBO.h; sourceTree = "<group>"; };
 		F1A6AE9018A030F00063C4BC /* vertex.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.v.glsl; sourceTree = "<group>"; };
 		F1A6AE9118A033550063C4BC /* fragment.f.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.f.glsl; sourceTree = "<group>"; };
+		F1EBA4D618A269CE006104B0 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../../../usr/local/Cellar/glew/1.10.0/lib/libGLEW.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +70,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1EBA4D718A269CE006104B0 /* libGLEW.a in Frameworks */,
+				F15B05B7189DE17F00C3509D /* libglfw3.a in Frameworks */,
 				F12445E2189F126D00BF68A3 /* libpng15.a in Frameworks */,
 				F15265D9189E682F00784A95 /* QuartzCore.framework in Frameworks */,
 				F15B05BD189DE18C00C3509D /* IOKit.framework in Frameworks */,
 				F15B05BB189DE18700C3509D /* Cocoa.framework in Frameworks */,
 				F15B05B9189DE18400C3509D /* OpenGL.framework in Frameworks */,
-				F15B05B7189DE17F00C3509D /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +114,7 @@
 		F15B05A1189DE02200C3509D = {
 			isa = PBXGroup;
 			children = (
+				F1EBA4D618A269CE006104B0 /* libGLEW.a */,
 				F12445E1189F126D00BF68A3 /* libpng15.a */,
 				F15265D8189E682F00784A95 /* QuartzCore.framework */,
 				F15B05BC189DE18C00C3509D /* IOKit.framework */,
@@ -296,6 +300,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/libpng/1.5.14/lib,
+					/usr/local/Cellar/glew/1.10.0/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -307,6 +312,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/libpng/1.5.14/lib,
+					/usr/local/Cellar/glew/1.10.0/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
