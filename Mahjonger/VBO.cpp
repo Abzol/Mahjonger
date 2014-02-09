@@ -57,6 +57,7 @@ GLuint make_shader(GLenum type, const char *filename){
 		glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &log_length);
 		if (log_length > 0) {
 			GLchar* log = new GLchar[log_length];
+			glGetShaderInfoLog(shader, log_length, NULL, log);
 			printf("Compile Log:\n%s\n", log);
 			delete[] log;
 		}
