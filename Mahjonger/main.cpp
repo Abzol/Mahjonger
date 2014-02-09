@@ -15,7 +15,6 @@
 
 int main(int argc, const char* argv[])
 {
-    
     /* Initialize the library */
     if (!glfwInit())
         return -1;
@@ -59,14 +58,13 @@ int main(int argc, const char* argv[])
     tilepkg.vbuffer= makeBuffer(GL_ARRAY_BUFFER, vertices, sizeof(vertices));
     tilepkg.ibuffer= makeBuffer(GL_ARRAY_BUFFER, indices, sizeof(indices));
     tilepkg.texture= png_texture_load("/Users/Wolfie/Desktop/tile2.png", ww, hw);
-    tilepkg.vshader= make_shader(GL_VERTEX_SHADER, "vertex.v.glsl");
-    tilepkg.fshader= make_shader(GL_FRAGMENT_SHADER, "fragment.f.glsl");
+    tilepkg.vshader= make_shader(GL_VERTEX_SHADER, "/Users/Wolfie/Desktop/Wolfie/Projects/Mahjonger/Mahjonger/vertex.v.glsl");
+    tilepkg.fshader= make_shader(GL_FRAGMENT_SHADER, "/Users/Wolfie/Desktop/Wolfie/Projects/Mahjonger/Mahjonger/fragment.f.glsl");
 
     if (tilepkg.vshader == 0 || tilepkg.fshader==0)
         return 0;
     
-    tilepkg.program= make_program(tilepkg.vshader, tilepkg.fshader);
-    
+    tilepkg.program= make_program(tilepkg.vshader, tilepkg.fshader);    
     if (tilepkg.program == 0)
         return 0;
     

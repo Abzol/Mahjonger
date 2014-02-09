@@ -20,9 +20,6 @@ GLuint makeBuffer(GLenum target, const void *buffer_data, GLsizei buffer_size) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 GLuint make_shader(GLenum type, const char *filename){
     GLint length;
-    //GLchar *source = file_contents(filename, &length);
-    
-    
     
     std::ifstream file (filename,std::ios::in);
 	if (file.good() ==false)
@@ -45,8 +42,8 @@ GLuint make_shader(GLenum type, const char *filename){
     
     shader = glCreateShader(type);
     glShaderSource(shader, 1, (const GLchar**)&source, &length);
-    free(source);
     glCompileShader(shader);
+    delete [] source;
     glGetShaderiv(shader, GL_COMPILE_STATUS, &shader_ok);
     if (!shader_ok) {
         fprintf(stderr, "Failed to compile %s:\n", filename);
