@@ -61,8 +61,8 @@
 		F15B05BC189DE18C00C3509D /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		F1A6AE8D18A019C60063C4BC /* VBO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VBO.cpp; sourceTree = "<group>"; };
 		F1A6AE8E18A019C60063C4BC /* VBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBO.h; sourceTree = "<group>"; };
-		F1A6AE9018A030F00063C4BC /* vertex.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.v.glsl; sourceTree = "<group>"; };
-		F1A6AE9118A033550063C4BC /* fragment.f.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.f.glsl; sourceTree = "<group>"; };
+		F1A6AE9018A030F00063C4BC /* vertex.vertex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = vertex.vertex; sourceTree = "<group>"; };
+		F1A6AE9118A033550063C4BC /* fragment.fragment */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fragment.fragment; sourceTree = "<group>"; };
 		F1EBA4D618A269CE006104B0 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = /usr/local/Cellar/glew/1.10.0/lib/libGLEW.a; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -109,11 +109,11 @@
 		F15265DE189E8B2800784A95 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				F1A6AE9118A033550063C4BC /* fragment.f.glsl */,
+				F1A6AE9118A033550063C4BC /* fragment.fragment */,
 				F12445DE189F125000BF68A3 /* libpngHook.cpp */,
 				F15265E3189E9DC200784A95 /* player.cpp */,
 				F15265DB189E8B2000784A95 /* tile.cpp */,
-				F1A6AE9018A030F00063C4BC /* vertex.v.glsl */,
+				F1A6AE9018A030F00063C4BC /* vertex.vertex */,
 				F1A6AE8D18A019C60063C4BC /* VBO.cpp */,
 				F15265E6189E9FD900784A95 /* wall.cpp */,
 				F15265E0189E8C0400784A95 /* windowManager.cpp */,

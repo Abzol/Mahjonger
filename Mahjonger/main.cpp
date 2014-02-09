@@ -32,7 +32,7 @@ int main(int argc, const char* argv[])
     
     if( glewInit() != GLEW_OK ) {
         fputs("Could not initialize extensions.\n", stderr);
-        return 0;
+        return 1;
     }
     
     glfwSwapInterval(1);
@@ -58,15 +58,21 @@ int main(int argc, const char* argv[])
     tilepkg.vbuffer= makeBuffer(GL_ARRAY_BUFFER, vertices, sizeof(vertices));
     tilepkg.ibuffer= makeBuffer(GL_ARRAY_BUFFER, indices, sizeof(indices));
     tilepkg.texture= png_texture_load("tile2.png", ww, hw);
-    tilepkg.vshader= make_shader(GL_VERTEX_SHADER, "vertex.v.glsl");
-    tilepkg.fshader= make_shader(GL_FRAGMENT_SHADER, "fragment.f.glsl");
+    tilepkg.vshader= make_shader(GL_VERTEX_SHADER, "vertex.vertex");
+    tilepkg.fshader= make_shader(GL_FRAGMENT_SHADER, "fragment.fragment");
 
     if (tilepkg.vshader == 0 || tilepkg.fshader==0)
-        return 0;
+	{
+		fprintf(stderr, "Couldn't load shaders\n");
+        return 2;
+	}
     
     tilepkg.program= make_program(tilepkg.vshader, tilepkg.fshader);    
     if (tilepkg.program == 0)
-        return 0;
+	{
+		fprintf(stderr, "Couldn't make a program\n");
+		return 3;
+	}
     
     tilepkg.uniforms.fadefactor = glGetUniformLocation(tilepkg.program, "fade_factor");
     tilepkg.uniforms.textures[0] = glGetUniformLocation(tilepkg.program, "textures[0]");
