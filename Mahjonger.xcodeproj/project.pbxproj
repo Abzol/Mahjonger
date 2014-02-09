@@ -38,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		220463C918A827A000264809 /* tile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile2.png; sourceTree = "<group>"; };
 		F12445DE189F125000BF68A3 /* libpngHook.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libpngHook.cpp; sourceTree = "<group>"; };
 		F12445DF189F125000BF68A3 /* libpngHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libpngHook.h; sourceTree = "<group>"; };
 		F12445E1189F126D00BF68A3 /* libpng15.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng15.a; path = /usr/local/Cellar/libpng/1.5.14/lib/libpng15.a; sourceTree = "<absolute>"; };
@@ -97,6 +98,14 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
+		220463C818A8277500264809 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				220463C918A827A000264809 /* tile2.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		F15265DE189E8B2800784A95 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +156,7 @@
 			children = (
 				F15265DF189E8B2E00784A95 /* Header */,
 				F15265DE189E8B2800784A95 /* Source */,
+				220463C818A8277500264809 /* Resources */,
 				F15B05AD189DE02200C3509D /* main.cpp */,
 				F15265DA189E81D300784A95 /* MainMenu.xib */,
 				F15B05AF189DE02200C3509D /* Mahjonger.1 */,
