@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		F12445DE189F125000BF68A3 /* libpngHook.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libpngHook.cpp; sourceTree = "<group>"; };
 		F12445DF189F125000BF68A3 /* libpngHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libpngHook.h; sourceTree = "<group>"; };
-		F12445E1189F126D00BF68A3 /* libpng15.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng15.a; path = ../../../../../../usr/local/Cellar/libpng/1.5.14/lib/libpng15.a; sourceTree = "<group>"; };
+		F12445E1189F126D00BF68A3 /* libpng15.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng15.a; path = /usr/local/Cellar/libpng/1.5.14/lib/libpng15.a; sourceTree = "<absolute>"; };
 		F15265D8189E682F00784A95 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F15265DA189E81D300784A95 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		F15265DB189E8B2000784A95 /* tile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tile.cpp; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		F15B05AA189DE02200C3509D /* Mahjonger */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Mahjonger; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15B05AD189DE02200C3509D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F15B05AF189DE02200C3509D /* Mahjonger.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Mahjonger.1; sourceTree = "<group>"; };
-		F15B05B6189DE17F00C3509D /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
+		F15B05B6189DE17F00C3509D /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = /usr/local/lib/libglfw3.a; sourceTree = "<absolute>"; };
 		F15B05B8189DE18400C3509D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		F15B05BA189DE18700C3509D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F15B05BC189DE18C00C3509D /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
@@ -62,7 +62,7 @@
 		F1A6AE8E18A019C60063C4BC /* VBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBO.h; sourceTree = "<group>"; };
 		F1A6AE9018A030F00063C4BC /* vertex.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.v.glsl; sourceTree = "<group>"; };
 		F1A6AE9118A033550063C4BC /* fragment.f.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.f.glsl; sourceTree = "<group>"; };
-		F1EBA4D618A269CE006104B0 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../../../usr/local/Cellar/glew/1.10.0/lib/libGLEW.a; sourceTree = "<group>"; };
+		F1EBA4D618A269CE006104B0 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = /usr/local/Cellar/glew/1.10.0/lib/libGLEW.a; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +83,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		220463C718A8240100264809 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F1EBA4D618A269CE006104B0 /* libGLEW.a */,
+				F12445E1189F126D00BF68A3 /* libpng15.a */,
+				F15265D8189E682F00784A95 /* QuartzCore.framework */,
+				F15B05BC189DE18C00C3509D /* IOKit.framework */,
+				F15B05BA189DE18700C3509D /* Cocoa.framework */,
+				F15B05B8189DE18400C3509D /* OpenGL.framework */,
+				F15B05B6189DE17F00C3509D /* libglfw3.a */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		F15265DE189E8B2800784A95 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,14 +128,8 @@
 		F15B05A1189DE02200C3509D = {
 			isa = PBXGroup;
 			children = (
-				F1EBA4D618A269CE006104B0 /* libGLEW.a */,
-				F12445E1189F126D00BF68A3 /* libpng15.a */,
-				F15265D8189E682F00784A95 /* QuartzCore.framework */,
-				F15B05BC189DE18C00C3509D /* IOKit.framework */,
-				F15B05BA189DE18700C3509D /* Cocoa.framework */,
-				F15B05B8189DE18400C3509D /* OpenGL.framework */,
-				F15B05B6189DE17F00C3509D /* libglfw3.a */,
 				F15B05AC189DE02200C3509D /* Mahjonger */,
+				220463C718A8240100264809 /* Libraries */,
 				F15B05AB189DE02200C3509D /* Products */,
 			);
 			sourceTree = "<group>";
