@@ -24,6 +24,7 @@ GLuint make_shader(GLenum type, const char *filename){
     std::ifstream file (filename,std::ios::in);
 	if (file.good() ==false)
 	{
+		fprintf(stderr, "Couldn't open file: %s\n", filename);
 		return 0;
 	}
     
@@ -45,12 +46,21 @@ GLuint make_shader(GLenum type, const char *filename){
     glCompileShader(shader);
     delete [] source;
     glGetShaderiv(shader, GL_COMPILE_STATUS, &shader_ok);
-    if (!shader_ok) {
+    if (shader_ok != GL_TRUE) {
         fprintf(stderr, "Failed to compile %s:\n", filename);
         show_info_log(shader, glGetShaderiv, glGetShaderInfoLog);
         glDeleteShader(shader);
         return 0;
     }
+	else {
+		GLint log_length;
+		glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &log_length);
+		if (log_length > 0) {
+			GLchar* log = new GLchar[log_length];
+			printf("Compile Log:\n%s\n", log);
+			delete[] log;
+		}
+	}
     return shader;
 }
 
@@ -73,14 +83,25 @@ GLuint make_program(GLuint vertex_shader, GLuint fragment_shader){
     GLuint program = glCreateProgram();
     glAttachShader(program, vertex_shader);
     glAttachShader(program, fragment_shader);
+	
     glLinkProgram(program);
-    
     glGetProgramiv(program, GL_LINK_STATUS, &program_ok);
-    if (!program_ok) {
+    if (program_ok != GL_TRUE) {
         fprintf(stderr, "Failed to link shader program:\n");
         show_info_log(program, glGetProgramiv, glGetProgramInfoLog);
         glDeleteProgram(program);
         return 0;
     }
+	
+	glValidateProgram(program);
+	glGetProgramiv(program, GL_VALIDATE_STATUS, &program_ok);
+	if (program_ok != GL_TRUE)
+	{
+		fprintf(stderr, "Program validation failed:\n");
+        show_info_log(program, glGetProgramiv, glGetProgramInfoLog);
+		glDeleteProgram(program);
+		return 0;
+	}
+	
     return program;
 }
