@@ -28,7 +28,7 @@ GLuint make_shader(GLenum type, const char *filename){
 	}
     
 	file.seekg(0, std::ios::end);
-	int size = file.tellg();
+	long long size = file.tellg();
 	GLchar* source = new GLchar[size];
 	file.seekg(0,std::ios::beg);
 	file.read(source,size);

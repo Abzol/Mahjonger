@@ -15,7 +15,7 @@ struct gprog{
     GLuint vbuffer, ibuffer, texture, vshader, fshader, program;
     struct {
         GLint fadefactor, textures[2], position;
-    }uniforms;
+    } uniforms;
     GLfloat fadefactor;
 };
 
