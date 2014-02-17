@@ -66,7 +66,7 @@ GLuint make_shader(GLenum type, const char *filename){
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-void show_info_log(GLuint object, PFNGLGETSHADERIVPROC glGet__iv,PFNGLGETSHADERINFOLOGPROC glGet__InfoLog)
+void show_info_log(GLuint object, void(*glGet__iv)(GLuint,GLenum,GLint*),void(*glGet__InfoLog)(GLuint,GLsizei,GLsizei*,GLchar*))
 {
     GLint log_length;
     char* log;

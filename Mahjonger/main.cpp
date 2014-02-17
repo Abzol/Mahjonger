@@ -6,12 +6,16 @@
 //  Copyright (c) 2014 Hakurou46. All rights reserved.
 //
 
-
+#include <iostream>
+// Including glew redefines OpenGL functions in a weird way I can't handle
+// It somehow manages to break passing OpenGL functions to templates, f.ex.
+//#include <glew.h>
+#include <glfw3.h>
+#include "Shader.h"
+#include "ShaderProgram.h"
 #include "VBO.h"
 #include "tile.h"
 #include "libpngHook.h"
-
-//basically copypasted glfw example, only adding a clClear call and vsync
 
 int main(int argc, const char* argv[])
 {
@@ -30,10 +34,11 @@ int main(int argc, const char* argv[])
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
     
-    if( glewInit() != GLEW_OK ) {
+	// See note above about GLEW
+    /*if( glewInit() != GLEW_OK ) {
         fputs("Could not initialize extensions.\n", stderr);
         return 1;
-    }
+    }*/
     
     glfwSwapInterval(1);
     
@@ -54,23 +59,34 @@ int main(int argc, const char* argv[])
     int width, height;
     int* ww = &width;
     int* hw = &height;
+	
+	Shader vsh(GL_VERTEX_SHADER, "vertex.vertex");
+	Shader fsh(GL_FRAGMENT_SHADER, "fragment.fragment");
+	ShaderProgram program(&vsh, &fsh);
     
     tilepkg.vbuffer= makeBuffer(GL_ARRAY_BUFFER, vertices, sizeof(vertices));
     tilepkg.ibuffer= makeBuffer(GL_ARRAY_BUFFER, indices, sizeof(indices));
     tilepkg.texture= png_texture_load("tile2.png", ww, hw);
-    tilepkg.vshader= make_shader(GL_VERTEX_SHADER, "vertex.vertex");
-    tilepkg.fshader= make_shader(GL_FRAGMENT_SHADER, "fragment.fragment");
+	tilepkg.vshader = vsh.glHandle();
+	tilepkg.fshader = fsh.glHandle();
+    //tilepkg.vshader= make_shader(GL_VERTEX_SHADER, "vertex.vertex");
+    //tilepkg.fshader= make_shader(GL_FRAGMENT_SHADER, "fragment.fragment");
 
-    if (tilepkg.vshader == 0 || tilepkg.fshader==0)
+    if(!vsh || !fsh)
 	{
-		fprintf(stderr, "Couldn't load shaders\n");
+		std::cerr << "Couldn't load shaders" << std::endl;
+		std::cerr << "VSH Compile: " << vsh.compileResult << std::endl;
+		std::cerr << "FSH Compile: " << fsh.compileResult << std::endl;
         return 2;
 	}
     
-    tilepkg.program= make_program(tilepkg.vshader, tilepkg.fshader);    
-    if (tilepkg.program == 0)
+    //tilepkg.program= make_program(tilepkg.vshader, tilepkg.fshader);
+	tilepkg.program = program.glHandle();
+    if(!program)
 	{
-		fprintf(stderr, "Couldn't make a program\n");
+		std::cerr << "Couldn't make a program." << std::endl;
+		std::cerr << "Linking: " << program.linkResult << std::endl;
+		std::cerr << "Validation: " << program.validateResult << std::endl;
 		return 3;
 	}
     

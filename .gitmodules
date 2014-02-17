@@ -1,0 +1,3 @@
+[submodule "lib/libshader"]
+	path = lib/libshader
+	url = https://github.com/uppfinnarn/libshader.git

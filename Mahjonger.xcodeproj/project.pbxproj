@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224E13B418B2013E003D7B3D /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 224E13B018B2013E003D7B3D /* Shader.cpp */; };
+		224E13B518B2013E003D7B3D /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 224E13B218B2013E003D7B3D /* ShaderProgram.cpp */; };
 		F12445E0189F125000BF68A3 /* libpngHook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F12445DE189F125000BF68A3 /* libpngHook.cpp */; };
 		F12445E2189F126D00BF68A3 /* libpng15.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F12445E1189F126D00BF68A3 /* libpng15.a */; };
 		F15265D9189E682F00784A95 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15265D8189E682F00784A95 /* QuartzCore.framework */; };
@@ -39,6 +41,11 @@
 
 /* Begin PBXFileReference section */
 		220463C918A827A000264809 /* tile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile2.png; sourceTree = "<group>"; };
+		224E13AF18B2013E003D7B3D /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Result.h; path = lib/libshader/Result.h; sourceTree = "<group>"; };
+		224E13B018B2013E003D7B3D /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Shader.cpp; path = lib/libshader/Shader.cpp; sourceTree = "<group>"; };
+		224E13B118B2013E003D7B3D /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Shader.h; path = lib/libshader/Shader.h; sourceTree = "<group>"; };
+		224E13B218B2013E003D7B3D /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderProgram.cpp; path = lib/libshader/ShaderProgram.cpp; sourceTree = "<group>"; };
+		224E13B318B2013E003D7B3D /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShaderProgram.h; path = lib/libshader/ShaderProgram.h; sourceTree = "<group>"; };
 		F12445DE189F125000BF68A3 /* libpngHook.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libpngHook.cpp; sourceTree = "<group>"; };
 		F12445DF189F125000BF68A3 /* libpngHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libpngHook.h; sourceTree = "<group>"; };
 		F12445E1189F126D00BF68A3 /* libpng15.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng15.a; path = /usr/local/Cellar/libpng/1.5.14/lib/libpng15.a; sourceTree = "<absolute>"; };
@@ -87,13 +94,14 @@
 		220463C718A8240100264809 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				224E13AE18B20127003D7B3D /* libshader */,
 				F1EBA4D618A269CE006104B0 /* libGLEW.a */,
 				F12445E1189F126D00BF68A3 /* libpng15.a */,
+				F15B05B6189DE17F00C3509D /* libglfw3.a */,
 				F15265D8189E682F00784A95 /* QuartzCore.framework */,
 				F15B05BC189DE18C00C3509D /* IOKit.framework */,
 				F15B05BA189DE18700C3509D /* Cocoa.framework */,
 				F15B05B8189DE18400C3509D /* OpenGL.framework */,
-				F15B05B6189DE17F00C3509D /* libglfw3.a */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -106,14 +114,26 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		224E13AE18B20127003D7B3D /* libshader */ = {
+			isa = PBXGroup;
+			children = (
+				224E13AF18B2013E003D7B3D /* Result.h */,
+				224E13B018B2013E003D7B3D /* Shader.cpp */,
+				224E13B118B2013E003D7B3D /* Shader.h */,
+				224E13B218B2013E003D7B3D /* ShaderProgram.cpp */,
+				224E13B318B2013E003D7B3D /* ShaderProgram.h */,
+			);
+			name = libshader;
+			sourceTree = "<group>";
+		};
 		F15265DE189E8B2800784A95 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				F1A6AE9118A033550063C4BC /* fragment.fragment */,
+				F1A6AE9018A030F00063C4BC /* vertex.vertex */,
 				F12445DE189F125000BF68A3 /* libpngHook.cpp */,
 				F15265E3189E9DC200784A95 /* player.cpp */,
 				F15265DB189E8B2000784A95 /* tile.cpp */,
-				F1A6AE9018A030F00063C4BC /* vertex.vertex */,
 				F1A6AE8D18A019C60063C4BC /* VBO.cpp */,
 				F15265E6189E9FD900784A95 /* wall.cpp */,
 				F15265E0189E8C0400784A95 /* windowManager.cpp */,
@@ -217,9 +237,11 @@
 			files = (
 				F15265E5189E9DC200784A95 /* player.cpp in Sources */,
 				F15265E2189E8C0400784A95 /* windowManager.cpp in Sources */,
+				224E13B418B2013E003D7B3D /* Shader.cpp in Sources */,
 				F1A6AE8F18A019C60063C4BC /* VBO.cpp in Sources */,
 				F15B05AE189DE02200C3509D /* main.cpp in Sources */,
 				F15265E8189E9FD900784A95 /* wall.cpp in Sources */,
+				224E13B518B2013E003D7B3D /* ShaderProgram.cpp in Sources */,
 				F12445E0189F125000BF68A3 /* libpngHook.cpp in Sources */,
 				F15265DD189E8B2000784A95 /* tile.cpp in Sources */,
 			);
