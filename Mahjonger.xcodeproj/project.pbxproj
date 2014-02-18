@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		224E13B418B2013E003D7B3D /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 224E13B018B2013E003D7B3D /* Shader.cpp */; };
 		224E13B518B2013E003D7B3D /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 224E13B218B2013E003D7B3D /* ShaderProgram.cpp */; };
 		F12445E0189F125000BF68A3 /* libpngHook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F12445DE189F125000BF68A3 /* libpngHook.cpp */; };
 		F12445E2189F126D00BF68A3 /* libpng15.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F12445E1189F126D00BF68A3 /* libpng15.a */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		220463C918A827A000264809 /* tile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile2.png; sourceTree = "<group>"; };
 		224E13AF18B2013E003D7B3D /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Result.h; path = lib/libshader/Result.h; sourceTree = "<group>"; };
-		224E13B018B2013E003D7B3D /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Shader.cpp; path = lib/libshader/Shader.cpp; sourceTree = "<group>"; };
 		224E13B118B2013E003D7B3D /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Shader.h; path = lib/libshader/Shader.h; sourceTree = "<group>"; };
 		224E13B218B2013E003D7B3D /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderProgram.cpp; path = lib/libshader/ShaderProgram.cpp; sourceTree = "<group>"; };
 		224E13B318B2013E003D7B3D /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShaderProgram.h; path = lib/libshader/ShaderProgram.h; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				224E13AF18B2013E003D7B3D /* Result.h */,
-				224E13B018B2013E003D7B3D /* Shader.cpp */,
 				224E13B118B2013E003D7B3D /* Shader.h */,
 				224E13B218B2013E003D7B3D /* ShaderProgram.cpp */,
 				224E13B318B2013E003D7B3D /* ShaderProgram.h */,
@@ -237,7 +234,6 @@
 			files = (
 				F15265E5189E9DC200784A95 /* player.cpp in Sources */,
 				F15265E2189E8C0400784A95 /* windowManager.cpp in Sources */,
-				224E13B418B2013E003D7B3D /* Shader.cpp in Sources */,
 				F1A6AE8F18A019C60063C4BC /* VBO.cpp in Sources */,
 				F15B05AE189DE02200C3509D /* main.cpp in Sources */,
 				F15265E8189E9FD900784A95 /* wall.cpp in Sources */,

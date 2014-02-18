@@ -25,7 +25,8 @@ struct gprog
 	} uniforms;
 	
 	GLuint vbuffer, ibuffer, texture;
-	Shader *vshader, *fshader;
+	VertexShader *vshader;
+	FragmentShader *fshader;
 	ShaderProgram *program;
     GLfloat fadefactor;
 };
