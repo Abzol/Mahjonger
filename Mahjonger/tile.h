@@ -10,16 +10,28 @@
 #define __Mahjonger__tile__
 
 #include <glfw3.h>
+#include "Shader.h"
+#include "ShaderProgram.h"
 
-struct gprog{
-    GLuint vbuffer, ibuffer, texture, vshader, fshader, program;
+struct gprog
+{
+	/*GLuint vbuffer, ibuffer, texture, vshader, fshader, program;
     struct {
         GLint fadefactor, textures[2], position;
-    } uniforms;
+    } uniforms;*/
+	
+	struct {
+		GLint position;
+	} uniforms;
+	
+	GLuint vbuffer, ibuffer, texture;
+	Shader *vshader, *fshader;
+	ShaderProgram *program;
     GLfloat fadefactor;
 };
 
-class Tile {
+class Tile
+{
 public:
     Tile(int type);
     void render(gprog pkg);
@@ -30,11 +42,11 @@ private:
     bool _visible;
 };
 
-static const GLfloat vertices[] =
-    {1,1,0, 1,0,0,
-    0,1,0, 0,0,0,
-    0,0,1, 1,0,1,
-    1,1,1, 0,1,1};
+static const GLfloat vertices[] = {
+	1,1,0, 1,0,0,
+	0,1,0, 0,0,0,
+	0,0,1, 1,0,1,
+	1,1,1, 0,1,1 };
 
 static const GLubyte indices[] = {0,1,2,3,4,1,5,6,4,7,2,6,0,1};
 

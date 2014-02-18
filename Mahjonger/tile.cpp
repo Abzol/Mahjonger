@@ -20,17 +20,16 @@ void Tile::flip(){
 
 void Tile::render(gprog pkg){
 
-    glUseProgram(pkg.program);
-    glUniform1f(pkg.uniforms.fadefactor, pkg.fadefactor);
+    pkg.program->use();
+	pkg.program->setUniform("fade_factor", pkg.fadefactor);
     
     glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, pkg.uniforms.textures[0]);
-    glUniform1i(pkg.uniforms.textures[0], 0);
+    glBindTexture(GL_TEXTURE_2D, pkg.program->uniformLocation("textures[0]"));
+    glUniform1i(pkg.program->uniformLocation("textures[0]"), 0);
     
     glActiveTexture(GL_TEXTURE1);
-    glBindTexture(GL_TEXTURE_2D, pkg.uniforms.textures[1]);
-    glUniform1i(pkg.uniforms.textures[1], 1);
-    
+    glBindTexture(GL_TEXTURE_2D, pkg.program->uniformLocation("textures[1]"));
+    glUniform1i(pkg.program->uniformLocation("textures[1]"), 1);
     
     glBindBuffer(GL_ARRAY_BUFFER, pkg.vbuffer);
     glVertexAttribPointer(pkg.uniforms.position, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*2, (void*)0);
