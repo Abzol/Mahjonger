@@ -61,7 +61,7 @@ int main(int argc, const char* argv[])
     int* hw = &height;
     
     tilepkg.vbuffer= makeBuffer(GL_ARRAY_BUFFER, vertices, sizeof(vertices));
-    tilepkg.ibuffer= makeBuffer(GL_ARRAY_BUFFER, indices, sizeof(indices));
+    tilepkg.ibuffer= makeBuffer(GL_ELEMENT_ARRAY_BUFFER, indices, sizeof(indices));
     tilepkg.texture= png_texture_load("tile2.png", ww, hw);
 	tilepkg.vshader = new Shader(GL_VERTEX_SHADER, "vertex.vertex");
 	tilepkg.fshader = new Shader(GL_FRAGMENT_SHADER, "fragment.fragment");
