@@ -10,17 +10,22 @@
 // Including glew redefines OpenGL functions in a weird way I can't handle
 // It somehow manages to break passing OpenGL functions to templates, f.ex.
 //#include <glew.h>
-#include <glfw3.h>
+/*#include <glfw3.h>
 #include "Shader.h"
-#include "ShaderProgram.h"
-#include "VBO.h"
+#include "ShaderProgram.h"*/
+/*#include "VBO.h"
 #include "tile.h"
-#include "libpngHook.h"
+#include "libpngHook.h"*/
+
+#include "App.h"
+#include "TestController.h"
+
+using namespace Mahjonger;
 
 int main(int argc, const char* argv[])
 {
     /* Initialize the library */
-    if (!glfwInit())
+    /*if (!glfwInit())
         return -1;
     
     GLFWwindow* window;
@@ -31,8 +36,8 @@ int main(int argc, const char* argv[])
         return -1;
     }
     
-    /* Make the window's context current */
-    glfwMakeContextCurrent(window);
+    // Make the window's context current
+    glfwMakeContextCurrent(window);*/
     
 	// See note above about GLEW
     /*if( glewInit() != GLEW_OK ) {
@@ -40,7 +45,7 @@ int main(int argc, const char* argv[])
         return 1;
     }*/
     
-    glfwSwapInterval(1);
+    /*glfwSwapInterval(1);
     
     glClearColor(0, 0, 0, 1);
     
@@ -63,8 +68,8 @@ int main(int argc, const char* argv[])
     tilepkg.vbuffer= makeBuffer(GL_ARRAY_BUFFER, vertices, sizeof(vertices));
     tilepkg.ibuffer= makeBuffer(GL_ELEMENT_ARRAY_BUFFER, indices, sizeof(indices));
     tilepkg.texture= png_texture_load("tile2.png", ww, hw);
-	tilepkg.vshader = new VertexShader("vertex.vertex");
-	tilepkg.fshader = new FragmentShader("fragment.fragment");
+	tilepkg.vshader = VertexShader("vertex.vertex");
+	tilepkg.fshader = FragmentShader("fragment.fragment");
     //tilepkg.vshader= make_shader(GL_VERTEX_SHADER, "vertex.vertex");
     //tilepkg.fshader= make_shader(GL_FRAGMENT_SHADER, "fragment.fragment");
 
@@ -77,7 +82,7 @@ int main(int argc, const char* argv[])
 	}
     
     //tilepkg.program= make_program(tilepkg.vshader, tilepkg.fshader);
-	tilepkg.program = new ShaderProgram(tilepkg.vshader, tilepkg.fshader);
+	tilepkg.program = ShaderProgram(tilepkg.vshader, tilepkg.fshader);
     if(!tilepkg.program)
 	{
 		std::cerr << "Couldn't make a program." << std::endl;
@@ -86,9 +91,9 @@ int main(int argc, const char* argv[])
 		return 3;
 	}
     
-    /*tilepkg.uniforms.fadefactor = glGetUniformLocation(tilepkg.program, "fade_factor");
-    tilepkg.uniforms.textures[0] = glGetUniformLocation(tilepkg.program, "textures[0]");
-    tilepkg.uniforms.textures[1] = glGetUniformLocation(tilepkg.program, "textures[1]");*/
+    //tilepkg.uniforms.fadefactor = glGetUniformLocation(tilepkg.program, "fade_factor");
+    //tilepkg.uniforms.textures[0] = glGetUniformLocation(tilepkg.program, "textures[0]");
+    //tilepkg.uniforms.textures[1] = glGetUniformLocation(tilepkg.program, "textures[1]");
     
     tilepkg.uniforms.position = glGetAttribLocation(tilepkg.program->glHandle(), "position");
     
@@ -107,22 +112,27 @@ int main(int argc, const char* argv[])
     glEnable(GL_CULL_FACE);
     glCullFace(GL_FRONT);
     
-    /* Loop until the user closes the window */
+    // Loop until the user closes the window
     while (!glfwWindowShouldClose(window))
     {
         tile.render(tilepkg);
         
-        /* Swap front and back buffers */
+        // Swap front and back buffers
         glfwSwapBuffers(window);
 		glClearColor(1, 0, 0, 1);
         glClear(GL_COLOR_BUFFER_BIT);
         
-        /* Poll for and process events */
+        // Poll for and process events
         glfwPollEvents();
         
         ++time;
     }
     
-    glfwTerminate();
+    glfwTerminate();*/
+	
+	App a;
+	a.pushController(new TestController(&a));
+	a.run();
+	
     return 0;
 }

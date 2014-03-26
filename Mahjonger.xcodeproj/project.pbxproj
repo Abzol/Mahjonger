@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2226F5E018E2B4FF00E2F3C8 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2226F5DE18E2B4FF00E2F3C8 /* App.cpp */; };
+		2226F5E318E2B76300E2F3C8 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2226F5E118E2B76300E2F3C8 /* Controller.cpp */; };
+		2226F5E718E2D32800E2F3C8 /* TestController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2226F5E518E2D32800E2F3C8 /* TestController.cpp */; };
 		F12445E0189F125000BF68A3 /* libpngHook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F12445DE189F125000BF68A3 /* libpngHook.cpp */; };
 		F12445E2189F126D00BF68A3 /* libpng15.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F12445E1189F126D00BF68A3 /* libpng15.a */; };
 		F15265D9189E682F00784A95 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15265D8189E682F00784A95 /* QuartzCore.framework */; };
@@ -39,6 +42,12 @@
 
 /* Begin PBXFileReference section */
 		220463C918A827A000264809 /* tile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile2.png; sourceTree = "<group>"; };
+		2226F5DE18E2B4FF00E2F3C8 /* App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
+		2226F5DF18E2B4FF00E2F3C8 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		2226F5E118E2B76300E2F3C8 /* Controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Controller.cpp; sourceTree = "<group>"; };
+		2226F5E218E2B76300E2F3C8 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		2226F5E518E2D32800E2F3C8 /* TestController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestController.cpp; sourceTree = "<group>"; };
+		2226F5E618E2D32800E2F3C8 /* TestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestController.h; sourceTree = "<group>"; };
 		224E13AF18B2013E003D7B3D /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Result.h; path = lib/libshader/Result.h; sourceTree = "<group>"; };
 		224E13B118B2013E003D7B3D /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Shader.h; path = lib/libshader/Shader.h; sourceTree = "<group>"; };
 		224E13B318B2013E003D7B3D /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShaderProgram.h; path = lib/libshader/ShaderProgram.h; sourceTree = "<group>"; };
@@ -105,9 +114,31 @@
 		220463C818A8277500264809 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F1A6AE9118A033550063C4BC /* fragment.fragment */,
+				F1A6AE9018A030F00063C4BC /* vertex.vertex */,
 				220463C918A827A000264809 /* tile2.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		2226F5DD18E2B4EC00E2F3C8 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				2226F5DF18E2B4FF00E2F3C8 /* App.h */,
+				2226F5DE18E2B4FF00E2F3C8 /* App.cpp */,
+				2226F5E218E2B76300E2F3C8 /* Controller.h */,
+				2226F5E118E2B76300E2F3C8 /* Controller.cpp */,
+			);
+			name = Engine;
+			sourceTree = "<group>";
+		};
+		2226F5E418E2D31500E2F3C8 /* Test Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				2226F5E618E2D32800E2F3C8 /* TestController.h */,
+				2226F5E518E2D32800E2F3C8 /* TestController.cpp */,
+			);
+			name = "Test Stuff";
 			sourceTree = "<group>";
 		};
 		224E13AE18B20127003D7B3D /* libshader */ = {
@@ -123,8 +154,6 @@
 		F15265DE189E8B2800784A95 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				F1A6AE9118A033550063C4BC /* fragment.fragment */,
-				F1A6AE9018A030F00063C4BC /* vertex.vertex */,
 				F12445DE189F125000BF68A3 /* libpngHook.cpp */,
 				F15265E3189E9DC200784A95 /* player.cpp */,
 				F15265DB189E8B2000784A95 /* tile.cpp */,
@@ -168,6 +197,8 @@
 		F15B05AC189DE02200C3509D /* Mahjonger */ = {
 			isa = PBXGroup;
 			children = (
+				2226F5DD18E2B4EC00E2F3C8 /* Engine */,
+				2226F5E418E2D31500E2F3C8 /* Test Stuff */,
 				F15265DF189E8B2E00784A95 /* Header */,
 				F15265DE189E8B2800784A95 /* Source */,
 				220463C818A8277500264809 /* Resources */,
@@ -230,6 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F15265E5189E9DC200784A95 /* player.cpp in Sources */,
+				2226F5E718E2D32800E2F3C8 /* TestController.cpp in Sources */,
+				2226F5E318E2B76300E2F3C8 /* Controller.cpp in Sources */,
+				2226F5E018E2B4FF00E2F3C8 /* App.cpp in Sources */,
 				F15265E2189E8C0400784A95 /* windowManager.cpp in Sources */,
 				F1A6AE8F18A019C60063C4BC /* VBO.cpp in Sources */,
 				F15B05AE189DE02200C3509D /* main.cpp in Sources */,
