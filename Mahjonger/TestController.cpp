@@ -7,9 +7,13 @@
 //
 
 #include "TestController.h"
+#include "TestVertex.h"
 
-static const GLfloat vertices[][2] = {
-	{0, 0}, {0, 1}, {1, 1}, {1, 0}
+static const TestVertex vertices[] = {
+	{-0.5, -0.5,	0, 0, 0, 1},
+	{ 0.5, -0.5,	1, 0, 0, 1},
+	{-0.5,  0.5,	0, 1, 0, 1},
+	{ 0.5,  0.5,	0, 0, 1, 1},
 };
 
 static const GLubyte indices[] = {0, 1, 2, 3};
