@@ -11,6 +11,15 @@
 
 using namespace Mahjonger;
 
+static const TestVertex vertices[] = {
+	{-0.5, -0.5,	0, 0, 0, 1},
+	{ 0.5, -0.5,	1, 0, 0, 1},
+	{-0.5,  0.5,	0, 1, 0, 1},
+	{ 0.5,  0.5,	0, 0, 1, 1},
+};
+
+static const GLubyte indices[] = {0, 1, 2, 3};
+
 TestDrawable::TestDrawable(ShaderProgram *program, ArrayBuffer *ibuffer, ElementArrayBuffer *vbuffer):
 	Drawable(program, ibuffer, vbuffer)
 {
@@ -33,6 +42,8 @@ void TestDrawable::draw()
 	program->use();
 	//ibuffer->bind();
 	//vbuffer->bind();
+	ArrayBuffer::unbind();
+	ElementArrayBuffer::unbind();
 	
 	struct {
 		GLint position, color;
@@ -44,12 +55,12 @@ void TestDrawable::draw()
 	glEnableVertexAttribArray(attribIndices.position);
 	glEnableVertexAttribArray(attribIndices.color);
 	
-	//glVertexAttribPointer(attribIndices.position, 2, GL_FLOAT, GL_FALSE, sizeof(TestVertex), (const GLvoid*)offsetof(TestVertex, position));
-	//glVertexAttribPointer(attribIndices.color, 3, GL_FLOAT, GL_FALSE, sizeof(TestVertex), (const GLvoid*)offsetof(TestVertex, color));
+	glVertexAttribPointer(attribIndices.position, 2, GL_FLOAT, GL_FALSE, sizeof(TestVertex), /*(const GLvoid*)offsetof(TestVertex, position)*/&vertices[0].position);
+	glVertexAttribPointer(attribIndices.color, 3, GL_FLOAT, GL_FALSE, sizeof(TestVertex), /*(const GLvoid*)offsetof(TestVertex, color)*/&vertices[0].color);
 	
-	//glDrawElements(GL_TRIANGLE_STRIP, 4, GL_UNSIGNED_BYTE, (const GLvoid*)0);
+	glDrawElements(GL_TRIANGLE_STRIP, /*4*/sizeof(vertices)/sizeof(vertices[0]), GL_UNSIGNED_BYTE, /*(const GLvoid*)0*/indices);
 	
-	glBegin(GL_TRIANGLE_STRIP);
+	/*glBegin(GL_TRIANGLE_STRIP);
 	{
 		glVertexAttrib2f(attribIndices.position, -1, -1);
 		glVertexAttrib4f(attribIndices.color, 0, 0, 0, 1);
@@ -63,7 +74,7 @@ void TestDrawable::draw()
 		glVertexAttrib2f(attribIndices.position, 1, 1);
 		glVertexAttrib4f(attribIndices.color, 0, 0, 1, 1);
 	}
-	glEnd();
+	glEnd();*/
 	
 	glDisableVertexAttribArray(attribIndices.position);
 	glDisableVertexAttribArray(attribIndices.color);

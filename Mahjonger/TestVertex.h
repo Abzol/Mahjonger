@@ -11,12 +11,10 @@
 
 #include <OpenGL/gl.h>
 
-#pragma pack(0)
 struct TestVertex
 {
 	GLfloat position[2];
-	GLfloat color[4];
+	GLfloat color[3];
 };
-#pragma pack()
 
 #endif
