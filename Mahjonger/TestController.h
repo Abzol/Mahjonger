@@ -31,8 +31,8 @@ namespace Mahjonger
 		FragmentShader *fsh;
 		ShaderProgram *program;
 		
-		ArrayBuffer *squareIBuffer;
-		ElementArrayBuffer *squareVBuffer;
+		ElementArrayBuffer *squareIBuffer;
+		ArrayBuffer *squareVBuffer;
 		
 		TestDrawable *thing;
 	};

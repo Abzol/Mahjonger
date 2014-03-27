@@ -27,10 +27,10 @@ TestController::TestController(App *app):
 	fsh = new FragmentShader("fragment.fragment");
 	program = new ShaderProgram(vsh, fsh);
 	
-	squareIBuffer = new ArrayBuffer(indices, sizeof(indices)/sizeof(indices[0]));
-	squareVBuffer = new ElementArrayBuffer(vertices, sizeof(vertices)/sizeof(vertices[0]));
+	squareVBuffer = new ArrayBuffer(vertices, sizeof(vertices)/sizeof(vertices[0]));
+	squareIBuffer = new ElementArrayBuffer(indices, sizeof(indices)/sizeof(indices[0]));
 	
-	thing = new TestDrawable(program, squareIBuffer, squareVBuffer);
+	thing = new TestDrawable(program, squareVBuffer, squareIBuffer);
 }
 
 TestController::~TestController()
