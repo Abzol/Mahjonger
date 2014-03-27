@@ -34,7 +34,7 @@ void App::run()
 	while(!quitting && !glfwWindowShouldClose(window))
 	{
 		// Clear
-		glClearColor(0, 0, 0, 1);
+		glClearColor(0, 0, 1, 1);
 		glClear(GL_DEPTH_BUFFER_BIT|GL_COLOR_BUFFER_BIT);
 		
 		// Note: This will crash if controllers is empty!
