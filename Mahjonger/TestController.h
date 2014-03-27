@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "Controller.h"
+#include "TestDrawable.h"
 
 namespace Mahjonger
 {
@@ -24,6 +25,16 @@ namespace Mahjonger
 		
 		virtual void tick();
 		virtual void draw();
+		
+	protected:
+		VertexShader *vsh;
+		FragmentShader *fsh;
+		ShaderProgram *program;
+		
+		ArrayBuffer *squareIBuffer;
+		ElementArrayBuffer *squareVBuffer;
+		
+		TestDrawable *thing;
 	};
 }
 

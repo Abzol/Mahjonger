@@ -10,6 +10,8 @@
 		2226F5E018E2B4FF00E2F3C8 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2226F5DE18E2B4FF00E2F3C8 /* App.cpp */; };
 		2226F5E318E2B76300E2F3C8 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2226F5E118E2B76300E2F3C8 /* Controller.cpp */; };
 		2226F5E718E2D32800E2F3C8 /* TestController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2226F5E518E2D32800E2F3C8 /* TestController.cpp */; };
+		2226F5EA18E2DD5A00E2F3C8 /* Drawable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2226F5E818E2DD5A00E2F3C8 /* Drawable.cpp */; };
+		22697BCD18E49C68008440EE /* TestDrawable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22697BCB18E49C68008440EE /* TestDrawable.cpp */; };
 		F12445E0189F125000BF68A3 /* libpngHook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F12445DE189F125000BF68A3 /* libpngHook.cpp */; };
 		F12445E2189F126D00BF68A3 /* libpng15.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F12445E1189F126D00BF68A3 /* libpng15.a */; };
 		F15265D9189E682F00784A95 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15265D8189E682F00784A95 /* QuartzCore.framework */; };
@@ -48,9 +50,14 @@
 		2226F5E218E2B76300E2F3C8 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		2226F5E518E2D32800E2F3C8 /* TestController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestController.cpp; sourceTree = "<group>"; };
 		2226F5E618E2D32800E2F3C8 /* TestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestController.h; sourceTree = "<group>"; };
+		2226F5E818E2DD5A00E2F3C8 /* Drawable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Drawable.cpp; sourceTree = "<group>"; };
+		2226F5E918E2DD5A00E2F3C8 /* Drawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawable.h; sourceTree = "<group>"; };
 		224E13AF18B2013E003D7B3D /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Result.h; path = lib/libshader/Result.h; sourceTree = "<group>"; };
 		224E13B118B2013E003D7B3D /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Shader.h; path = lib/libshader/Shader.h; sourceTree = "<group>"; };
 		224E13B318B2013E003D7B3D /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShaderProgram.h; path = lib/libshader/ShaderProgram.h; sourceTree = "<group>"; };
+		22697BCA18E492B0008440EE /* Buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Buffer.h; path = lib/libshader/Buffer.h; sourceTree = "<group>"; };
+		22697BCB18E49C68008440EE /* TestDrawable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestDrawable.cpp; sourceTree = "<group>"; };
+		22697BCC18E49C68008440EE /* TestDrawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDrawable.h; sourceTree = "<group>"; };
 		F12445DE189F125000BF68A3 /* libpngHook.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libpngHook.cpp; sourceTree = "<group>"; };
 		F12445DF189F125000BF68A3 /* libpngHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libpngHook.h; sourceTree = "<group>"; };
 		F12445E1189F126D00BF68A3 /* libpng15.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng15.a; path = /usr/local/Cellar/libpng/1.5.14/lib/libpng15.a; sourceTree = "<absolute>"; };
@@ -128,6 +135,8 @@
 				2226F5DE18E2B4FF00E2F3C8 /* App.cpp */,
 				2226F5E218E2B76300E2F3C8 /* Controller.h */,
 				2226F5E118E2B76300E2F3C8 /* Controller.cpp */,
+				2226F5E918E2DD5A00E2F3C8 /* Drawable.h */,
+				2226F5E818E2DD5A00E2F3C8 /* Drawable.cpp */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -137,6 +146,8 @@
 			children = (
 				2226F5E618E2D32800E2F3C8 /* TestController.h */,
 				2226F5E518E2D32800E2F3C8 /* TestController.cpp */,
+				22697BCC18E49C68008440EE /* TestDrawable.h */,
+				22697BCB18E49C68008440EE /* TestDrawable.cpp */,
 			);
 			name = "Test Stuff";
 			sourceTree = "<group>";
@@ -144,6 +155,7 @@
 		224E13AE18B20127003D7B3D /* libshader */ = {
 			isa = PBXGroup;
 			children = (
+				22697BCA18E492B0008440EE /* Buffer.h */,
 				224E13AF18B2013E003D7B3D /* Result.h */,
 				224E13B118B2013E003D7B3D /* Shader.h */,
 				224E13B318B2013E003D7B3D /* ShaderProgram.h */,
@@ -263,6 +275,7 @@
 				F15265E5189E9DC200784A95 /* player.cpp in Sources */,
 				2226F5E718E2D32800E2F3C8 /* TestController.cpp in Sources */,
 				2226F5E318E2B76300E2F3C8 /* Controller.cpp in Sources */,
+				2226F5EA18E2DD5A00E2F3C8 /* Drawable.cpp in Sources */,
 				2226F5E018E2B4FF00E2F3C8 /* App.cpp in Sources */,
 				F15265E2189E8C0400784A95 /* windowManager.cpp in Sources */,
 				F1A6AE8F18A019C60063C4BC /* VBO.cpp in Sources */,
@@ -270,6 +283,7 @@
 				F15265E8189E9FD900784A95 /* wall.cpp in Sources */,
 				F12445E0189F125000BF68A3 /* libpngHook.cpp in Sources */,
 				F15265DD189E8B2000784A95 /* tile.cpp in Sources */,
+				22697BCD18E49C68008440EE /* TestDrawable.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
