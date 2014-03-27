@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2206A90618E4D5160099684C /* fragment.fragment in CopyFiles */ = {isa = PBXBuildFile; fileRef = F1A6AE9118A033550063C4BC /* fragment.fragment */; };
+		2206A90718E4D5170099684C /* vertex.vertex in CopyFiles */ = {isa = PBXBuildFile; fileRef = F1A6AE9018A030F00063C4BC /* vertex.vertex */; };
 		2226F5E018E2B4FF00E2F3C8 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2226F5DE18E2B4FF00E2F3C8 /* App.cpp */; };
 		2226F5E318E2B76300E2F3C8 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2226F5E118E2B76300E2F3C8 /* Controller.cpp */; };
 		2226F5E718E2D32800E2F3C8 /* TestController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2226F5E518E2D32800E2F3C8 /* TestController.cpp */; };
@@ -30,6 +32,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		2206A90518E4D5120099684C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				2206A90618E4D5160099684C /* fragment.fragment in CopyFiles */,
+				2206A90718E4D5170099684C /* vertex.vertex in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F15B05A8189DE02200C3509D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -44,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		220463C918A827A000264809 /* tile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile2.png; sourceTree = "<group>"; };
+		2206A90118E4B3260099684C /* TestVertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVertex.h; sourceTree = "<group>"; };
 		2226F5DE18E2B4FF00E2F3C8 /* App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
 		2226F5DF18E2B4FF00E2F3C8 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		2226F5E118E2B76300E2F3C8 /* Controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Controller.cpp; sourceTree = "<group>"; };
@@ -144,6 +158,7 @@
 		2226F5E418E2D31500E2F3C8 /* Test Stuff */ = {
 			isa = PBXGroup;
 			children = (
+				2206A90118E4B3260099684C /* TestVertex.h */,
 				2226F5E618E2D32800E2F3C8 /* TestController.h */,
 				2226F5E518E2D32800E2F3C8 /* TestController.cpp */,
 				22697BCC18E49C68008440EE /* TestDrawable.h */,
@@ -231,6 +246,7 @@
 				F15B05A6189DE02200C3509D /* Sources */,
 				F15B05A7189DE02200C3509D /* Frameworks */,
 				F15B05A8189DE02200C3509D /* CopyFiles */,
+				2206A90518E4D5120099684C /* CopyFiles */,
 			);
 			buildRules = (
 			);
