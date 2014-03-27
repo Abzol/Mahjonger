@@ -14,7 +14,7 @@
 struct TestVertex
 {
 	GLfloat position[2];
-	GLfloat color[3];
+	GLfloat color[4];
 };
 
 #endif
