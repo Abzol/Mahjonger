@@ -25,16 +25,19 @@ void TestDrawable::draw()
 {
 	program->use();
 	
-	glBegin(GL_TRIANGLES);
+	glBegin(GL_TRIANGLE_STRIP);
 	{
-		glVertex3f(1, 1, 1);
-		glColor3f(1, 0, 0);
+		glVertex2f(-1, -1);
+		glColor3f(0, 0, 0);
 		
-		glVertex3f(-1, 1, 1);
+		glVertex2f(1, -1);
+		glColor3f(0, 0, 1);
+		
+		glVertex2f(-1, 1);
 		glColor3f(0, 1, 0);
 		
-		glVertex3f(1, -1, 1);
-		glColor3f(0, 0, 1);
+		glVertex2f(1, 1);
+		glColor3f(1, 0, 0);
 	}
 	glEnd();
 	
