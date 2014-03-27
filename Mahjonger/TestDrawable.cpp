@@ -42,6 +42,7 @@ void TestDrawable::draw()
 	program->use();
 	//ibuffer->bind();
 	//vbuffer->bind();
+	
 	ArrayBuffer::unbind();
 	ElementArrayBuffer::unbind();
 	
@@ -55,10 +56,20 @@ void TestDrawable::draw()
 	glEnableVertexAttribArray(attribIndices.position);
 	glEnableVertexAttribArray(attribIndices.color);
 	
-	glVertexAttribPointer(attribIndices.position, 2, GL_FLOAT, GL_FALSE, sizeof(TestVertex), /*(const GLvoid*)offsetof(TestVertex, position)*/&vertices[0].position);
-	glVertexAttribPointer(attribIndices.color, 3, GL_FLOAT, GL_FALSE, sizeof(TestVertex), /*(const GLvoid*)offsetof(TestVertex, color)*/&vertices[0].color);
+	/*glVertexAttribPointer(attribIndices.position, 2, GL_FLOAT, GL_FALSE, sizeof(TestVertex), (const GLvoid*)offsetof(TestVertex, position));
+	glVertexAttribPointer(attribIndices.color, 4, GL_FLOAT, GL_FALSE, sizeof(TestVertex), (const GLvoid*)offsetof(TestVertex, color));
 	
-	glDrawElements(GL_TRIANGLE_STRIP, /*4*/sizeof(vertices)/sizeof(vertices[0]), GL_UNSIGNED_BYTE, /*(const GLvoid*)0*/indices);
+	glDrawElements(GL_TRIANGLE_STRIP, 4, GL_UNSIGNED_BYTE, (const GLvoid*)0);*/
+	
+	glBegin(GL_TRIANGLE_STRIP);
+	{
+		for(int i = 0; i < sizeof(vertices)/sizeof(vertices[0]); i++)
+		{
+			glVertexAttrib2f(attribIndices.position, vertices[i].position[0], vertices[i].position[1]);
+			glVertexAttrib4f(attribIndices.color, vertices[i].color[0], vertices[i].color[1], vertices[i].color[2], vertices[i].color[3]);
+		}
+	}
+	glEnd();
 	
 	/*glBegin(GL_TRIANGLE_STRIP);
 	{
