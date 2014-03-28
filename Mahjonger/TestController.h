@@ -27,12 +27,12 @@ namespace Mahjonger
 		virtual void draw();
 		
 	protected:
-		VertexShader *vsh;
-		FragmentShader *fsh;
-		ShaderProgram *program;
+		VertexShader vsh;
+		FragmentShader fsh;
+		ShaderProgram program;
 		
-		ElementArrayBuffer *squareIBuffer;
-		ArrayBuffer *squareVBuffer;
+		ElementArrayBuffer squareIBuffer;
+		ArrayBuffer squareVBuffer;
 		
 		TestDrawable *thing;
 	};

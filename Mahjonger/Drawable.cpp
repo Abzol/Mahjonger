@@ -10,7 +10,7 @@
 
 using namespace Mahjonger;
 
-Drawable::Drawable(ShaderProgram *program, ArrayBuffer *vbuffer, ElementArrayBuffer *ibuffer):
+Drawable::Drawable(ShaderProgram program, ArrayBuffer vbuffer, ElementArrayBuffer ibuffer):
 	program(program), vbuffer(vbuffer), ibuffer(ibuffer)
 {
 	

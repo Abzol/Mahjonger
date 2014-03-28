@@ -17,7 +17,7 @@ namespace Mahjonger
 	class TestDrawable : public Drawable
 	{
 	public:
-		TestDrawable(ShaderProgram *program, ArrayBuffer *ibuffer, ElementArrayBuffer *vbuffer);
+		TestDrawable(ShaderProgram program, ArrayBuffer ibuffer, ElementArrayBuffer vbuffer);
 		virtual ~TestDrawable();
 		
 		virtual void draw();

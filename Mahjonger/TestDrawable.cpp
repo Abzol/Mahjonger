@@ -20,15 +20,15 @@ static const TestVertex vertices[] = {
 
 static const GLubyte indices[] = {0, 1, 2, 3};
 
-TestDrawable::TestDrawable(ShaderProgram *program, ArrayBuffer *ibuffer, ElementArrayBuffer *vbuffer):
+TestDrawable::TestDrawable(ShaderProgram program, ArrayBuffer ibuffer, ElementArrayBuffer vbuffer):
 	Drawable(program, ibuffer, vbuffer)
 {
 	int tmp;
-	glGetProgramiv(program->glHandle(), GL_ATTACHED_SHADERS, &tmp);
+	glGetProgramiv(program, GL_ATTACHED_SHADERS, &tmp);
 	std::cout << "Attached Shaders: " << tmp << std::endl;
-	glGetProgramiv(program->glHandle(), GL_ACTIVE_ATTRIBUTES, &tmp);
+	glGetProgramiv(program, GL_ACTIVE_ATTRIBUTES, &tmp);
 	std::cout << "Active Attributes: " << tmp << std::endl;
-	glGetProgramiv(program->glHandle(), GL_ACTIVE_UNIFORMS, &tmp);
+	glGetProgramiv(program, GL_ACTIVE_UNIFORMS, &tmp);
 	std::cout << "Active Uniforms: " << tmp << std::endl;
 }
 
@@ -39,9 +39,9 @@ TestDrawable::~TestDrawable()
 
 void TestDrawable::draw()
 {
-	program->use();
-	//ibuffer->bind();
-	//vbuffer->bind();
+	program.use();
+	//ibuffer.bind();
+	//vbuffer.bind();
 	
 	ArrayBuffer::unbind();
 	ElementArrayBuffer::unbind();
@@ -49,8 +49,8 @@ void TestDrawable::draw()
 	struct {
 		GLint position, color;
 	} attribIndices = {
-		program->attribIndex("position"),
-		program->attribIndex("color")
+		program.attribIndex("position"),
+		program.attribIndex("color")
 	};
 	
 	glEnableVertexAttribArray(attribIndices.position);

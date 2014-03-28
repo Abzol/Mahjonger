@@ -18,14 +18,14 @@ namespace Mahjonger
 	class Drawable
 	{
 	public:
-		Drawable(ShaderProgram *program, ArrayBuffer *vbuffer, ElementArrayBuffer *ibuffer);
+		Drawable(ShaderProgram program, ArrayBuffer vbuffer, ElementArrayBuffer ibuffer);
 		virtual ~Drawable();
 		virtual void draw() = 0;
 		
 	protected:
-		ShaderProgram *program;
-		ArrayBuffer *vbuffer;
-		ElementArrayBuffer *ibuffer;
+		ShaderProgram program;
+		ArrayBuffer vbuffer;
+		ElementArrayBuffer ibuffer;
 	};
 };
 

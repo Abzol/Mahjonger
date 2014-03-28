@@ -23,12 +23,12 @@ using namespace Mahjonger;
 TestController::TestController(App *app):
 	Controller(app)
 {
-	vsh = new VertexShader("vertex.vertex");
-	fsh = new FragmentShader("fragment.fragment");
-	program = new ShaderProgram(vsh, fsh);
+	vsh = VertexShader("vertex.vertex");
+	fsh = FragmentShader("fragment.fragment");
+	program = ShaderProgram(vsh, fsh);
 	
-	squareVBuffer = new ArrayBuffer(vertices, sizeof(vertices)/sizeof(vertices[0]));
-	squareIBuffer = new ElementArrayBuffer(indices, sizeof(indices)/sizeof(indices[0]));
+	squareVBuffer = ArrayBuffer(vertices, sizeof(vertices)/sizeof(vertices[0]));
+	squareIBuffer = ElementArrayBuffer(indices, sizeof(indices)/sizeof(indices[0]));
 	
 	thing = new TestDrawable(program, squareVBuffer, squareIBuffer);
 }
